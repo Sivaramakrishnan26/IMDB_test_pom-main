@@ -9,7 +9,7 @@ class TestSearch:  # Class for verifying search results on the IMDb Name Search 
     def test_search(self):
         time.sleep(5)
         search_page = SearchPage(self.driver)
-        search_page.scroll()
-        search_page.click()
-        search_page.enter_name("Walt Disney")
+        search_page.expand()
+        search_page.enter_text("Walt Disney", "1901-01", "1901-12")
         search_page.see_results()
+        time.sleep(5)

@@ -15,7 +15,6 @@ class BasePage:
         element = self.find_element(locator, timeout)
         actions = ActionChains(self.driver)
         actions.scroll_to_element(element).perform()
-        # self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def click_element(self, locator, timeout=10):  # Method to click the element
         element = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))

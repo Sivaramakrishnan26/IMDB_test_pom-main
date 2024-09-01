@@ -1,0 +1,15 @@
+import pytest
+from selenium import webdriver
+from pages.search_page import SearchPage
+import time
+
+
+@pytest.mark.usefixtures("setup")
+class TestSearch:  # Class for verifying search results on the IMDb Name Search page
+    def test_search(self):
+        time.sleep(5)
+        search_page = SearchPage(self.driver)
+        search_page.scroll()
+        search_page.click()
+        search_page.enter_name("Walt Disney")
+        search_page.see_results()
